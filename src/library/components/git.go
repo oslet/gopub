@@ -56,6 +56,7 @@ func (c *BaseGit) UpdateToVersion() error {
 	cmds := []string{}
 	cmds = append(cmds, fmt.Sprintf("cd %s ", destination))
 	cmds = append(cmds, fmt.Sprintf("/usr/bin/env git reset -q --hard %s ", c.baseComponents.task.CommitId))
+	cmds = append(cmds, fmt.Sprintf("/usr/bin/env git rev-parse --short HEAD > release.txt"))
 	cmd := strings.Join(cmds, " && ")
 	_, err := c.baseComponents.runLocalCommand(cmd)
 	return err

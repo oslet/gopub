@@ -32,6 +32,9 @@ func init() {
 	beego.Router("/changePasswd", &controllers.ChangePasswdController{})
 	beego.Router("/register", &controllers.RegisterController{})
 
+	beego.Router("/api/get/gitrelease", &controllers.GetReleaseController{})
+	beego.Router("/api/get/gitbeta", &controllers.GetBetaController{})
+
 	beego.Router("/api/get/walle/detection", &wallecontrollers.DetectionController{})
 	beego.Router("/api/get/walle/detectionssh", &wallecontrollers.DetectionsshController{})
 	beego.Router("/api/get/walle/release", &wallecontrollers.ReleaseController{})
